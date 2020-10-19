@@ -151,3 +151,113 @@ function findOutlier(int) {
     };
 
 }
+
+// ********************************************
+// NOT SOLVED
+// ********************************************
+// Given a string of words, you need to find the highest scoring word.
+// Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
+// You need to return the highest scoring word as a string.
+// If two words score the same, return the word that appears earliest in the original string.
+// All letters will be lowercase and all inputs will be valid.
+
+function high(x) {
+    // assign all letters of the alphabet a value 
+    const keysArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26];
+    const alphabet = "abcdefghijklmnopqrstuvwxyz"
+    const alphabetArr = alphabet.split("");
+
+    const map = new Map();
+
+    for (let i = 0; i < keysArr.length; i++) {
+        map.set(keysArr[i], alphabetArr[i])
+
+    }
+    console.log(map)
+    const inputArr = x.split(" ");
+
+    for (let i = 0; i < inputArr.length; i++) {
+        // map(inputArr[i]);
+
+    }
+
+}
+
+// ********************************************
+// SOLVED
+// ********************************************
+
+// You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. 
+// We want to create the text that should be displayed next to such an item.
+
+// Implement a function likes :: [String] -> String, which must take in input array, containing the names of people who like an item. 
+// It must return the display text as shown in the examples:
+
+function likes(names) {
+    switch (names.length) {
+        case 0:
+            return "no one likes this";
+        case 1:
+            return `${names[0]} likes this`;
+        case 2:
+            return `${names[0]} and ${names[1]} like this`;
+        case 3:
+            return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+        default:
+            return `${names[0]}, ${names[1]} and ${names.length -2} others like this`;
+
+    };
+}
+
+// ********************************************
+// UN SOLVED
+// ********************************************
+// Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements 
+// with the same value next to each other and preserving the original order of elements.
+
+const uniqueInOrder = function(iterable) {
+        if (Array.isArray(iterable) === true) {
+            const sortedArr = iterable.sort()
+
+
+
+            // console.log(sortedArr);
+        } else {
+            const inputArr = iterable.split("");
+            const newSortedArr = inputArr.sort();
+            for (let i = 0; i < newSortedArr.length; i++) {
+                console.log(newSortedArr[i])
+                console.log(newSortedArr[i + 1])
+                    // if (sortedArr[i] === sortedArr[(i + 1)]) {
+                    //     console.log(sortedArr[i])
+                    // }
+            }
+        }
+
+
+    }
+    // uniqueInOrder(["h,2,2,2,1"])
+    // uniqueInOrder("ahhhhhhhhh")
+    // uniqueInOrder("hhhhahahahhs")
+
+
+// ********************************************
+// SOLVED
+// ********************************************
+// single unique value in an array, return that value
+
+function findUniq(arr) {
+    const sortedArr = arr.sort(function(a, b) { return a - b });
+
+    for (let i = 0; i < sortedArr.length; i++) {
+        if (sortedArr[i] !== sortedArr[i + 1] && sortedArr[i] !== sortedArr[i - 1]) {
+            console.log(sortedArr[i]);
+        };
+    };
+};
+
+
+// ********************************************
+// UN SOLVED
+// ********************************************
+// convert a dash or underscore to Upper Camel Case
