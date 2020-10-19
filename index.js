@@ -62,7 +62,7 @@ function findShort(s) {
 
 }
 
-
+// not solved
 function digitalRoot(n) {
     // "16" => "1" + "6"
     // "127" => "1"+ "2" + "3"
@@ -87,8 +87,67 @@ function digitalRoot(n) {
 
     }
     console.log(add(newNumArr.slice(1)))
+}
+
+// ********************************************
+//  NOT SOLVED
+// ********************************************
+// Given an array of integers, find the one that appears an odd number of times.
+// There will always be only one integer that appears an odd number of times.
+
+function findOdd(nums) {
+    // input is an array or single number
+    // sort the array 
+    // then tally the number of times a number appears 
+    // find which number is odd 
+    // if only one number appears return that number 
+
+    if (nums.length === 1) {
+        console.log(nums[0]);
+    } else {
+        const sortedNums = nums.sort();
+        console.log(sortedNums)
+
+        for (let i = 0; i < sortedNums.length; i++) {
+            let count = 0;
+            if (sortedNums[i] === sortedNums[i + 1]) {
+                count++
+            }
+            console.log(count)
+        }
+
+    }
 
 
 
+
+}
+
+
+// ********************************************
+// SOLVED
+// ********************************************
+// You are given an array (which will have a length of at least 3, but could be very large) containing integers. 
+// The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N.
+//  Write a method that takes the array as an argument and returns this "outlier" N.
+
+function findOutlier(int) {
+    // takes an array 
+    // check if all values are even
+    const evenArr = [];
+    const oddArr = [];
+    int.forEach(num => {
+        if (num % 2 === 0) {
+            evenArr.push(num);
+        } else {
+            oddArr.push(num);
+        };
+    });
+
+    if (evenArr.length === 1) {
+        return evenArr[0];
+    } else {
+        return oddArr[0];
+    };
 
 }
